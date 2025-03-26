@@ -76,21 +76,21 @@ function App() {
   
               {/* Right Column - Photo & Profiles */}
               <div className="flex-1 flex flex-col items-center gap-8">
-                <div className="relative group">
-                  <img
-                    src="samman.png"
-                    alt="Profile"
-                    className="rounded-2xl shadow-[0_0_25px_#FF00FF] w-64 h-64 object-cover 
-                      transition-transform group-hover:scale-105"
-                  />
-                  {/* Username Tag */}
-                  <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-[#0d0d1f]/70 backdrop-blur-md px-6 py-3 rounded-full border border-[#39FF14] shadow-[0_0_15px_#39FF14]/50">
-  <span className="text-lg font-bold tracking-widest text-[#E0E0E0] font-[JetBrains_Mono] flex items-center gap-1 uppercase">
-    <span className="text-[#FF00FF] text-xl">&lt;</span>
-    <span className="text-[#39FF14] tracking-tight text-xl drop-shadow-[0_0_5px_#39FF14]">Asocsam</span>
-    <span className="text-[#FF00FF] text-xl">&gt;</span>
-  </span>
-</div>
+  {/* Profile Photo Container */}
+  <div className="w-full flex justify-center">
+    <img
+      src="src/samman.png"
+      alt="Profile"
+      className="rounded-2xl shadow-[0_0_25px_#FF00FF] w-64 h-64 object-cover mx-auto"
+    />
+  </div>
+
+  {/* Username Tag */}
+  <div className="text-[#39FF14] font-bold text-xl glitch" data-text="<asocsam>">
+    <span className="text-[#FF00FF]">&lt;</span>
+    asocsam
+    <span className="text-[#FF00FF]">&gt;</span>
+  </div>
 
 
                 </div>
