@@ -15,7 +15,7 @@ function App() {
       <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-[#E0E0E0] font-mono">
         <header className="relative">
           <img
-            src="src/IMG_3955.jpg"
+            src="IMG_3955.jpg"
             alt="Cyberpunk Background"
             className="absolute inset-0 w-full h-full object-cover opacity-10 z-0"
           />
@@ -78,7 +78,7 @@ function App() {
               <div className="flex-1 flex flex-col items-center gap-8">
                 <div className="relative group">
                   <img
-                    src="src/samman.png"
+                    src="samman.png"
                     alt="Profile"
                     className="rounded-2xl shadow-[0_0_25px_#FF00FF] w-64 h-64 object-cover 
                       transition-transform group-hover:scale-105"
