@@ -1,9 +1,13 @@
 import {
-  Activity,
+  Award,
+  BookOpen,
   Brain,
   CheckCircle2,
   Github,
+  Linkedin,
+  Lock,
   Mail,
+  Radar,
   Rocket,
   Shield,
   Sparkles,
@@ -13,22 +17,205 @@ import {
 import { motion } from 'framer-motion';
 import profileImg from './samman.png';
 import heroTexture from './IMG_3955.jpg';
-import {
-  socials,
-  highlightStats,
-  projects,
-  experience,
-  skills,
-  certifications,
-  impactMetrics,
-  achievements,
-  type Project,
-  type ExperienceItem,
-  type SkillCluster,
-  type Certification,
-  type ImpactMetric,
-  type Achievement,
-} from './content';
+
+const socials = [
+  {
+    label: 'Email',
+    icon: Mail,
+    href: 'mailto:24s.chouhan@gmail.com',
+  },
+  {
+    label: 'GitHub',
+    icon: Github,
+    href: 'https://github.com/asocsam',
+  },
+  {
+    label: 'LinkedIn',
+    icon: Linkedin,
+    href: 'https://www.linkedin.com/in/samman-chouhan',
+  },
+];
+
+const highlightStats = [
+  {
+    title: 'Top 6% – National Cyber League',
+    description: 'Ranked among 4,199 competitors across seven CTF domains (Spring 2024).',
+  },
+  {
+    title: 'Certified Ethical Hacker',
+    description: 'EC-Council CEH | Security+ | AWS Architect (in progress).',
+  },
+  {
+    title: 'Security Engineer',
+    description: 'Cloud security, threat detection, and SIEM engineering practitioner.',
+  },
+];
+
+const projects = [
+  {
+    title: 'Blue Team Detection',
+    subtitle: 'Detection-as-code engineering',
+    summary:
+      'Sigma rule libraries and Splunk/Elastic content built to detect adversary behaviors mapped to MITRE ATT&CK.',
+    highlights: [
+      'Detection pipelines that transform research into reusable analytics content.',
+      'Dashboards and hunt workbooks that surface high-fidelity signals for defenders.',
+      'Automation scripts to validate detections against emulated adversary behaviors.',
+    ],
+    tools: ['Sigma', 'Splunk', 'Elastic', 'Python'],
+    link: 'https://github.com/asocsam/blue-team-detection',
+  },
+  {
+    title: 'Cloud Security Automation',
+    subtitle: 'Guardrails for AWS environments',
+    summary:
+      'Infrastructure-as-code blueprints and runbooks that harden AWS accounts with security-first defaults.',
+    highlights: [
+      'Automated IAM baseline enforcing least privilege across core services.',
+      'Config and CloudTrail monitoring patterns for continuous compliance.',
+      'Incident response playbooks integrating with native AWS detections.',
+    ],
+    tools: ['AWS', 'Terraform', 'CloudFormation', 'Python'],
+    link: 'https://github.com/asocsam/cloud-security-projects',
+  },
+  {
+    title: 'SIEM Threat Detection',
+    subtitle: 'Operational dashboards & analytics',
+    summary:
+      'Curated Splunk dashboards, Elastic visualisations, and Sentinel playbooks delivering actionable SOC insights.',
+    highlights: [
+      'Correlation searches mapped to ATT&CK tactics for rapid triage.',
+      'Visual storytelling dashboards for executive and SOC consumption.',
+      'Detection content versioned and tested to stay ahead of evolving threats.',
+    ],
+    tools: ['Splunk', 'Elastic', 'KQL', 'Sigma'],
+    link: 'https://github.com/asocsam/SIEM-Projects-Dashboards',
+  },
+  {
+    title: 'Offensive Security Projects',
+    subtitle: 'Adversary emulation labs',
+    summary:
+      'Red team tooling, exploit research, and hands-on lab writeups that sharpen offensive tradecraft.',
+    highlights: [
+      'End-to-end attack chains exercised against vulnerable lab infrastructure.',
+      'Custom payload development with staged command-and-control.',
+      'Writeups documenting methodology, mitigations, and defender takeaways.',
+    ],
+    tools: ['Burp Suite', 'Metasploit', 'Python', 'Bash'],
+    link: 'https://github.com/asocsam/offensive-red-team-projects',
+  },
+];
+
+const experience = [
+  {
+    title: 'Threat Detection & Response Engineer',
+    organization: 'Blue Team Detection Labs',
+    timeframe: '2023 – Present',
+    description:
+      'Designing analytics-as-code, adversary simulations, and SOC automation directly from my open-source security repos.',
+    bullets: [
+      'Translate research into deployable Sigma rules and Splunk content mapped to MITRE ATT&CK.',
+      'Build hunt workbooks and dashboards that accelerate defender workflows and storytelling.',
+      'Automate detection validation by replaying adversary behavior captured in lab scenarios.',
+    ],
+  },
+  {
+    title: 'Cloud Security Engineer',
+    organization: 'AWS Security Automation Initiative',
+    timeframe: '2023 – Present',
+    description:
+      'Applying infrastructure-as-code and native AWS guardrails to harden cloud landing zones and incident response.',
+    bullets: [
+      'Codify IAM, Config, and GuardDuty guardrails that meet zero-trust principles.',
+      'Author response runbooks that integrate CloudTrail intelligence with automation.',
+      'Continuously evaluate posture with reusable Terraform and CloudFormation modules.',
+    ],
+  },
+  {
+    title: 'Graduate Cybersecurity Engineer',
+    organization: 'Illinois Institute of Technology',
+    timeframe: '2024 – 2025',
+    description:
+      'M.S. Cybersecurity Engineering candidate specialising in cloud, detection, and adversary simulation.',
+    bullets: [
+      'Coursework spanning malware analysis, digital forensics, and network defense.',
+      'Lab leadership building shared resources for classmates pursuing competition readiness.',
+      'Research focus on bridging offensive insights with defensive engineering rigor.',
+    ],
+  },
+];
+
+const skills = [
+  {
+    title: 'Cloud & Infrastructure Security',
+    items: ['AWS', 'Terraform', 'CloudFormation', 'Kubernetes', 'Docker'],
+  },
+  {
+    title: 'Detection Engineering',
+    items: ['Splunk', 'Elastic', 'Sigma', 'KQL', 'MITRE ATT&CK'],
+  },
+  {
+    title: 'Security Operations',
+    items: ['SIEM Engineering', 'Threat Hunting', 'Incident Response', 'Forensics'],
+  },
+  {
+    title: 'Automation & Scripting',
+    items: ['Python', 'Bash', 'PowerShell', 'API Integrations'],
+  },
+  {
+    title: 'Offensive Tradecraft',
+    items: ['Burp Suite', 'Metasploit', 'Nmap', 'TryHackMe Top 1%'],
+  },
+  {
+    title: 'DevSecOps',
+    items: ['CI/CD Security', 'Secrets Management', 'Policy-as-Code'],
+  },
+];
+
+// Tailwind gradient utilities referenced dynamically in certification data.
+// Safelist: from-pink-500/80 to-pink-400/40 from-cyan-500/80 to-cyan-400/40 from-emerald-500/80 to-emerald-400/40
+const certifications = [
+  {
+    name: 'Certified Ethical Hacker',
+    issuer: 'EC-Council',
+    icon: Shield,
+    color: 'from-pink-500/80 to-pink-400/40',
+  },
+  {
+    name: 'CompTIA Security+',
+    issuer: 'CompTIA',
+    icon: Lock,
+    color: 'from-cyan-500/80 to-cyan-400/40',
+  },
+  {
+    name: 'AWS Solutions Architect (In Progress)',
+    issuer: 'Amazon Web Services',
+    icon: Rocket,
+    color: 'from-emerald-500/80 to-emerald-400/40',
+  },
+];
+
+const achievements = [
+  {
+    title: 'CTF Competitor',
+    description: 'Top 6% at National Cyber League, CSAW CTF participant, and CPTC contributor.',
+    icon: TrophyIcon,
+  },
+  {
+    title: 'TryHackMe & HackTheBox',
+    description: 'TryHackMe top 1% performer with an expanding library of lab walkthroughs.',
+    icon: Radar,
+  },
+  {
+    title: 'Security Storyteller',
+    description: 'Documenting lessons learned to help defenders adopt adversarial thinking.',
+    icon: BookOpen,
+  },
+];
+
+function TrophyIcon(props: React.ComponentProps<typeof Sparkles>) {
+  return <Sparkles {...props} />;
+}
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -56,7 +243,7 @@ function App() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/10 px-4 py-1 text-sm uppercase tracking-[0.3em] text-cyan-200">
-                Seasoned Security Engineer
+                Security Engineer
                 <span className="h-1 w-1 rounded-full bg-cyan-300" />
                 Cloud & Detection Specialist
               </div>
@@ -65,14 +252,10 @@ function App() {
                   Samman Chouhan
                 </h1>
                 <p className="text-lg leading-relaxed text-slate-300 md:text-xl">
-                  Seasoned security engineer delivering cloud-native defenses, detection pipelines, and purple team
-                  automation for fintech, SaaS, and critical infrastructure teams. Advancing research through the M.S.
-                  Cybersecurity Engineering program at Illinois Institute of Technology (Dec 2025).
+                  M.S. Cybersecurity Engineering candidate at Illinois Institute of Technology building cloud security
+                  automation, detection-as-code, and adversary simulation projects that empower defenders.
                 </p>
               </div>
-              <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-200">
-                CEH • Security+ • AWS Solutions Architect (In Progress)
-              </p>
               <div className="grid gap-4 md:grid-cols-3">
                 {highlightStats.map((stat) => (
                   <div
@@ -140,32 +323,6 @@ function App() {
       </div>
 
       <main className="relative z-10 space-y-24 pb-24">
-        <Section title="Credentials & Impact" icon={Shield} eyebrow="Proof at a glance">
-          <div className="grid gap-6 lg:grid-cols-[1.2fr,0.8fr]">
-            <div className="grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-              <h3 className="text-lg font-semibold text-cyan-200">Certifications</h3>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {certifications.map((cert) => (
-                  <CertificationCard key={cert.name} cert={cert} />
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              {impactMetrics.map((metric) => (
-                <ImpactCard key={metric.stat} metric={metric} />
-              ))}
-              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-purple-500/10 via-slate-900 to-slate-950 p-6 backdrop-blur">
-                <p className="text-xs uppercase tracking-[0.3em] text-purple-200">Signature Highlights</p>
-                <div className="mt-4 grid gap-4">
-                  {achievements.map((achievement) => (
-                    <AchievementCard key={achievement.title} achievement={achievement} />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </Section>
-
         <Section title="Signature Projects" icon={Terminal} eyebrow="GitHub Spotlights">
           <div className="grid gap-8 lg:grid-cols-2">
             {projects.map((project) => (
@@ -175,7 +332,7 @@ function App() {
         </Section>
 
         <Section title="Experience Blueprint" icon={Brain} eyebrow="How I build security" background="from-blue-500/10 via-slate-900 to-slate-950">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-3">
             {experience.map((item) => (
               <ExperienceCard key={item.title} item={item} />
             ))}
@@ -187,6 +344,27 @@ function App() {
             {skills.map((cluster) => (
               <SkillCard key={cluster.title} cluster={cluster} />
             ))}
+          </div>
+        </Section>
+
+        <Section title="Certifications & Achievements" icon={Award} eyebrow="Proof of impact">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+              <h3 className="text-lg font-semibold text-cyan-200">Credentials</h3>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {certifications.map((cert) => (
+                  <CertificationCard key={cert.name} cert={cert} />
+                ))}
+              </div>
+            </div>
+            <div className="grid gap-4 rounded-3xl border border-white/10 bg-gradient-to-br from-purple-500/10 via-slate-900 to-slate-950 p-8 backdrop-blur">
+              <h3 className="text-lg font-semibold text-purple-200">Highlights</h3>
+              <div className="grid gap-4">
+                {achievements.map((achievement) => (
+                  <AchievementCard key={achievement.title} achievement={achievement} />
+                ))}
+              </div>
+            </div>
           </div>
         </Section>
 
@@ -227,9 +405,44 @@ function App() {
             </a>
           </div>
         </div>
-      </div>
-    </motion.article>
+      </footer>
+    </div>
   );
+}
+
+interface Project {
+  title: string;
+  subtitle: string;
+  summary: string;
+  highlights: string[];
+  tools: string[];
+  link: string;
+}
+
+interface ExperienceItem {
+  title: string;
+  organization: string;
+  timeframe: string;
+  description: string;
+  bullets: string[];
+}
+
+interface SkillCluster {
+  title: string;
+  items: string[];
+}
+
+interface Certification {
+  name: string;
+  issuer: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  color: string;
+}
+
+interface Achievement {
+  title: string;
+  description: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 function ProjectCard({ project }: { project: Project }) {
@@ -351,23 +564,6 @@ function AchievementCard({ achievement }: { achievement: Achievement }) {
         <p className="text-xs text-slate-200">{achievement.description}</p>
       </div>
     </div>
-  );
-}
-
-function ImpactCard({ metric }: { metric: ImpactMetric }) {
-  return (
-    <motion.div
-      {...fadeIn}
-      className="flex items-start gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur"
-    >
-      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-slate-900/70 text-cyan-200">
-        <Activity className="h-5 w-5" />
-      </div>
-      <div>
-        <p className="text-lg font-semibold text-white">{metric.stat}</p>
-        <p className="text-sm text-slate-300">{metric.detail}</p>
-      </div>
-    </motion.div>
   );
 }
 
