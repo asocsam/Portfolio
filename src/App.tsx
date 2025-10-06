@@ -1,10 +1,9 @@
 import {
-  Activity,
+  Award,
   BookOpen,
   Brain,
   CheckCircle2,
   Github,
-  GraduationCap,
   Linkedin,
   Lock,
   Mail,
@@ -39,16 +38,16 @@ const socials = [
 
 const highlightStats = [
   {
-    title: '40% Higher Detection Precision',
-    description: 'Real-time telemetry pipeline across Splunk, Elastic, and Snowflake at Synapse.',
-  },
-  {
     title: 'Top 6% – National Cyber League',
     description: 'Ranked among 4,199 competitors across seven CTF domains (Spring 2024).',
   },
   {
-    title: '55% Faster Analytics Shipping',
-    description: 'Detection-as-code program with 120+ Sigma rules and GitLab CI/CD automations.',
+    title: 'Certified Ethical Hacker',
+    description: 'EC-Council CEH | Security+ | AWS Architect (in progress).',
+  },
+  {
+    title: 'Security Engineer',
+    description: 'Cloud security, threat detection, and SIEM engineering practitioner.',
   },
 ];
 
@@ -57,7 +56,7 @@ const projects = [
     title: 'Blue Team Detection',
     subtitle: 'Detection-as-code engineering',
     summary:
-      '120+ Sigma rules, Splunk detections, and analytics-as-code pipelines aligning to MITRE ATT&CK for fintech workloads.',
+      'Sigma rule libraries and Splunk/Elastic content built to detect adversary behaviors mapped to MITRE ATT&CK.',
     highlights: [
       'Detection pipelines that transform research into reusable analytics content.',
       'Dashboards and hunt workbooks that surface high-fidelity signals for defenders.',
@@ -70,7 +69,7 @@ const projects = [
     title: 'Cloud Security Automation',
     subtitle: 'Guardrails for AWS environments',
     summary:
-      'Infrastructure-as-code baselines, compliance automations, and response playbooks enforcing zero-trust guardrails.',
+      'Infrastructure-as-code blueprints and runbooks that harden AWS accounts with security-first defaults.',
     highlights: [
       'Automated IAM baseline enforcing least privilege across core services.',
       'Config and CloudTrail monitoring patterns for continuous compliance.',
@@ -83,7 +82,7 @@ const projects = [
     title: 'SIEM Threat Detection',
     subtitle: 'Operational dashboards & analytics',
     summary:
-      'Splunk, Sentinel, and Elastic content packs with SLAs, KPIs, and automation to keep SOC teams ahead of threats.',
+      'Curated Splunk dashboards, Elastic visualisations, and Sentinel playbooks delivering actionable SOC insights.',
     highlights: [
       'Correlation searches mapped to ATT&CK tactics for rapid triage.',
       'Visual storytelling dashboards for executive and SOC consumption.',
@@ -96,7 +95,7 @@ const projects = [
     title: 'Offensive Security Projects',
     subtitle: 'Adversary emulation labs',
     summary:
-      'Red team tooling, exploit research, and hands-on lab writeups sharpening adversarial thinking for defenders.',
+      'Red team tooling, exploit research, and hands-on lab writeups that sharpen offensive tradecraft.',
     highlights: [
       'End-to-end attack chains exercised against vulnerable lab infrastructure.',
       'Custom payload development with staged command-and-control.',
@@ -109,79 +108,67 @@ const projects = [
 
 const experience = [
   {
-    title: 'Senior Security Engineer',
-    organization: 'Synapse LLC',
-    timeframe: 'Jan 2024 – Present',
+    title: 'Threat Detection & Response Engineer',
+    organization: 'Blue Team Detection Labs',
+    timeframe: '2023 – Present',
     description:
-      'Leading detection engineering, purple team automation, and telemetry strategy for a fintech security program.',
+      'Designing analytics-as-code, adversary simulations, and SOC automation directly from my open-source security repos.',
     bullets: [
-      'Built a real-time pipeline aggregating 50TB+ telemetry across Splunk, Elastic, and Snowflake, lifting detection accuracy by 40%.',
-      'Deployed detection-as-code workflows in GitLab CI/CD with 120+ Sigma rules, trimming analytics release cycles by 55%.',
-      'Ran AttackIQ and Atomic Red Team simulations that increased control coverage by 35% and tuned response playbooks.',
+      'Translate research into deployable Sigma rules and Splunk content mapped to MITRE ATT&CK.',
+      'Build hunt workbooks and dashboards that accelerate defender workflows and storytelling.',
+      'Automate detection validation by replaying adversary behavior captured in lab scenarios.',
     ],
   },
   {
-    title: 'Security Operations Engineer',
-    organization: 'CloudOne Managed Security',
-    timeframe: 'Aug 2022 – Jan 2024',
+    title: 'Cloud Security Engineer',
+    organization: 'AWS Security Automation Initiative',
+    timeframe: '2023 – Present',
     description:
-      'Owned SIEM engineering, threat hunting, and client reporting for SaaS and cloud-native environments.',
+      'Applying infrastructure-as-code and native AWS guardrails to harden cloud landing zones and incident response.',
     bullets: [
-      'Maintained Splunk pipelines serving 25 SaaS clients and 35TB/day ingest with 99% MITRE ATT&CK coverage.',
-      'Authored 85 detections and 18 SOAR playbooks, cutting response times by 30% and false positives by 70%.',
-      'Delivered executive-ready threat hunting briefings and exposure reviews that drove board-level risk reductions.',
+      'Codify IAM, Config, and GuardDuty guardrails that meet zero-trust principles.',
+      'Author response runbooks that integrate CloudTrail intelligence with automation.',
+      'Continuously evaluate posture with reusable Terraform and CloudFormation modules.',
     ],
   },
   {
-    title: 'Security Operations Center Analyst',
-    organization: 'Tech Guard Team',
-    timeframe: 'May 2021 – Aug 2022',
+    title: 'Graduate Cybersecurity Engineer',
+    organization: 'Illinois Institute of Technology',
+    timeframe: '2024 – 2025',
     description:
-      'Triaged incidents, tuned SIEM analytics, and coordinated remediation for enterprise and public sector customers.',
+      'M.S. Cybersecurity Engineering candidate specialising in cloud, detection, and adversary simulation.',
     bullets: [
-      'Investigated 2.5K+ incidents annually across Splunk, Sentinel, and QRadar with a 98% SLA adherence rate.',
-      'Implemented hunt playbooks that surfaced credential abuse, ransomware precursors, and BEC tradecraft.',
-      'Partnered with IR teams to streamline evidence capture and automation, shrinking containment time by 25%.',
-    ],
-  },
-  {
-    title: 'Cybersecurity Analyst Co-op',
-    organization: 'SecureFuture Labs',
-    timeframe: 'Jan 2021 – May 2021',
-    description:
-      'Supported governance, risk, and cloud security assessments for manufacturing and healthcare clients.',
-    bullets: [
-      'Documented NIST CSF maturity gaps and remediation roadmaps adopted by CISO leadership.',
-      'Automated evidence collection scripts in Python that reduced audit preparation effort by 20 hours per engagement.',
-      'Collaborated on AWS security baselines leveraging Config, GuardDuty, and IAM least-privilege patterns.',
+      'Coursework spanning malware analysis, digital forensics, and network defense.',
+      'Lab leadership building shared resources for classmates pursuing competition readiness.',
+      'Research focus on bridging offensive insights with defensive engineering rigor.',
     ],
   },
 ];
 
 const skills = [
   {
-    title: 'Cloud & Platform Security',
-    items: ['AWS', 'Azure', 'GCP', 'Terraform', 'CloudFormation'],
+    title: 'Cloud & Infrastructure Security',
+    items: ['AWS', 'Terraform', 'CloudFormation', 'Kubernetes', 'Docker'],
   },
   {
-    title: 'Detection & Analytics Engineering',
-    items: ['Splunk', 'Elastic', 'Snowflake', 'Sigma', 'MITRE ATT&CK'],
+    title: 'Detection Engineering',
+    items: ['Splunk', 'Elastic', 'Sigma', 'KQL', 'MITRE ATT&CK'],
   },
   {
-    title: 'Threat Detection & Response',
-    items: ['Threat Hunting', 'Incident Response', 'SOAR', 'Playbook Automation'],
+    title: 'Security Operations',
+    items: ['SIEM Engineering', 'Threat Hunting', 'Incident Response', 'Forensics'],
   },
   {
-    title: 'Security Automation & Scripting',
-    items: ['Python', 'PowerShell', 'Bash', 'GitLab CI/CD', 'API Integrations'],
+    title: 'Automation & Scripting',
+    items: ['Python', 'Bash', 'PowerShell', 'API Integrations'],
   },
   {
-    title: 'Offensive & Purple Teaming',
-    items: ['AttackIQ', 'Atomic Red Team', 'Burp Suite', 'Metasploit', 'TryHackMe Top 1%'],
+    title: 'Offensive Tradecraft',
+    items: ['Burp Suite', 'Metasploit', 'Nmap', 'TryHackMe Top 1%'],
   },
   {
-    title: 'Governance & Risk Management',
-    items: ['NIST CSF', 'ISO 27001', 'SOC 2', 'Risk Assessments', 'Security Awareness'],
+    title: 'DevSecOps',
+    items: ['CI/CD Security', 'Secrets Management', 'Policy-as-Code'],
   },
 ];
 
@@ -208,38 +195,27 @@ const certifications = [
   },
 ];
 
-const impactMetrics = [
-  {
-    stat: '40% ↑ Detection Accuracy',
-    detail: 'Realigned telemetry and analytics pipelines to boost signal fidelity across Splunk, Elastic, and Snowflake.',
-  },
-  {
-    stat: '70% ↓ False Positives',
-    detail: 'Tuned detections and SOAR playbooks for SaaS clients, accelerating analyst triage and containment.',
-  },
-  {
-    stat: '35% ↑ Control Coverage',
-    detail: 'Orchestrated purple team simulations to validate MITRE ATT&CK defenses and harden response workflows.',
-  },
-];
-
 const achievements = [
   {
-    title: 'Purple Team Program Lead',
-    description: 'Ran AttackIQ and Atomic Red Team exercises to close detection gaps by 35% across critical controls.',
+    title: 'CTF Competitor',
+    description: 'Top 6% at National Cyber League, CSAW CTF participant, and CPTC contributor.',
+    icon: TrophyIcon,
+  },
+  {
+    title: 'TryHackMe & HackTheBox',
+    description: 'TryHackMe top 1% performer with an expanding library of lab walkthroughs.',
     icon: Radar,
   },
   {
-    title: 'Detection Content Author',
-    description: 'Published 120+ Sigma detections, Splunk analytics, and response runbooks used by fintech and SaaS teams.',
+    title: 'Security Storyteller',
+    description: 'Documenting lessons learned to help defenders adopt adversarial thinking.',
     icon: BookOpen,
   },
-  {
-    title: 'Graduate Research & Mentorship',
-    description: 'M.S. Cybersecurity Engineering (Illinois Tech, Dec 2025) guiding peers on threat hunting and detection labs.',
-    icon: GraduationCap,
-  },
 ];
+
+function TrophyIcon(props: React.ComponentProps<typeof Sparkles>) {
+  return <Sparkles {...props} />;
+}
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -267,7 +243,7 @@ function App() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/10 px-4 py-1 text-sm uppercase tracking-[0.3em] text-cyan-200">
-                Seasoned Security Engineer
+                Security Engineer
                 <span className="h-1 w-1 rounded-full bg-cyan-300" />
                 Cloud & Detection Specialist
               </div>
@@ -276,14 +252,10 @@ function App() {
                   Samman Chouhan
                 </h1>
                 <p className="text-lg leading-relaxed text-slate-300 md:text-xl">
-                  Seasoned security engineer delivering cloud-native defenses, detection pipelines, and purple team
-                  automation for fintech, SaaS, and critical infrastructure teams. Advancing research through the M.S.
-                  Cybersecurity Engineering program at Illinois Institute of Technology (Dec 2025).
+                  M.S. Cybersecurity Engineering candidate at Illinois Institute of Technology building cloud security
+                  automation, detection-as-code, and adversary simulation projects that empower defenders.
                 </p>
               </div>
-              <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-200">
-                CEH • Security+ • AWS Solutions Architect (In Progress)
-              </p>
               <div className="grid gap-4 md:grid-cols-3">
                 {highlightStats.map((stat) => (
                   <div
@@ -351,32 +323,6 @@ function App() {
       </div>
 
       <main className="relative z-10 space-y-24 pb-24">
-        <Section title="Credentials & Impact" icon={Shield} eyebrow="Proof at a glance">
-          <div className="grid gap-6 lg:grid-cols-[1.2fr,0.8fr]">
-            <div className="grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-              <h3 className="text-lg font-semibold text-cyan-200">Certifications</h3>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {certifications.map((cert) => (
-                  <CertificationCard key={cert.name} cert={cert} />
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              {impactMetrics.map((metric) => (
-                <ImpactCard key={metric.stat} metric={metric} />
-              ))}
-              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-purple-500/10 via-slate-900 to-slate-950 p-6 backdrop-blur">
-                <p className="text-xs uppercase tracking-[0.3em] text-purple-200">Signature Highlights</p>
-                <div className="mt-4 grid gap-4">
-                  {achievements.map((achievement) => (
-                    <AchievementCard key={achievement.title} achievement={achievement} />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </Section>
-
         <Section title="Signature Projects" icon={Terminal} eyebrow="GitHub Spotlights">
           <div className="grid gap-8 lg:grid-cols-2">
             {projects.map((project) => (
@@ -386,7 +332,7 @@ function App() {
         </Section>
 
         <Section title="Experience Blueprint" icon={Brain} eyebrow="How I build security" background="from-blue-500/10 via-slate-900 to-slate-950">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-3">
             {experience.map((item) => (
               <ExperienceCard key={item.title} item={item} />
             ))}
@@ -398,6 +344,27 @@ function App() {
             {skills.map((cluster) => (
               <SkillCard key={cluster.title} cluster={cluster} />
             ))}
+          </div>
+        </Section>
+
+        <Section title="Certifications & Achievements" icon={Award} eyebrow="Proof of impact">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+              <h3 className="text-lg font-semibold text-cyan-200">Credentials</h3>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {certifications.map((cert) => (
+                  <CertificationCard key={cert.name} cert={cert} />
+                ))}
+              </div>
+            </div>
+            <div className="grid gap-4 rounded-3xl border border-white/10 bg-gradient-to-br from-purple-500/10 via-slate-900 to-slate-950 p-8 backdrop-blur">
+              <h3 className="text-lg font-semibold text-purple-200">Highlights</h3>
+              <div className="grid gap-4">
+                {achievements.map((achievement) => (
+                  <AchievementCard key={achievement.title} achievement={achievement} />
+                ))}
+              </div>
+            </div>
           </div>
         </Section>
 
@@ -476,11 +443,6 @@ interface Achievement {
   title: string;
   description: string;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-}
-
-interface ImpactMetric {
-  stat: string;
-  detail: string;
 }
 
 function ProjectCard({ project }: { project: Project }) {
@@ -602,23 +564,6 @@ function AchievementCard({ achievement }: { achievement: Achievement }) {
         <p className="text-xs text-slate-200">{achievement.description}</p>
       </div>
     </div>
-  );
-}
-
-function ImpactCard({ metric }: { metric: ImpactMetric }) {
-  return (
-    <motion.div
-      {...fadeIn}
-      className="flex items-start gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur"
-    >
-      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-slate-900/70 text-cyan-200">
-        <Activity className="h-5 w-5" />
-      </div>
-      <div>
-        <p className="text-lg font-semibold text-white">{metric.stat}</p>
-        <p className="text-sm text-slate-300">{metric.detail}</p>
-      </div>
-    </motion.div>
   );
 }
 
