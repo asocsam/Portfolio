@@ -9,9 +9,6 @@ import {
   Radar,
   BookOpen,
   GraduationCap,
-  Target,
-  CloudCog,
-  Command,
 } from 'lucide-react';
 
 export interface SocialLink {
@@ -23,11 +20,6 @@ export interface SocialLink {
 export interface HighlightStat {
   title: string;
   description: string;
-}
-
-export interface NavLink {
-  label: string;
-  href: string;
 }
 
 export interface Project {
@@ -70,29 +62,11 @@ export interface ImpactMetric {
   detail: string;
 }
 
-export interface FocusArea {
-  title: string;
-  description: string;
-  bullets: string[];
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
-  accent: string;
-}
-
 export const credentialBadges = [
   'CEH',
   'CompTIA Security+',
   'AWS Solutions Architect – Associate (In Progress)',
   'Splunk Core Certified Power User',
-];
-
-export const navLinks: NavLink[] = [
-  { label: 'Overview', href: '#top' },
-  { label: 'Credentials', href: '#credentials' },
-  { label: 'Leadership', href: '#focus' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
 ];
 
 export const socials: SocialLink[] = [
@@ -115,16 +89,16 @@ export const socials: SocialLink[] = [
 
 export const highlightStats: HighlightStat[] = [
   {
-    title: '120+ Analytics Operationalized',
-    description: 'Detection-as-code program shipping Sigma, Splunk, and Elastic content with CI/CD governance.',
+    title: '40% Higher Detection Precision',
+    description: 'Real-time telemetry pipeline across Splunk, Elastic, and Snowflake at Synapse.',
   },
   {
-    title: '40% Lift in Detection Fidelity',
-    description: 'Unified telemetry architecture across Splunk, Elastic, and Snowflake to raise precision.',
+    title: 'Top 6% – National Cyber League',
+    description: 'Ranked among 4,199 competitors across seven CTF domains (Spring 2024).',
   },
   {
-    title: 'Top 6% National Cyber League',
-    description: 'Ranked among 4,199 competitors across seven CTF disciplines (Spring 2024).',
+    title: '55% Faster Analytics Shipping',
+    description: 'Detection-as-code program with 120+ Sigma rules and GitLab CI/CD automations.',
   },
 ];
 
@@ -294,45 +268,6 @@ export const impactMetrics: ImpactMetric[] = [
   {
     stat: '35% ↑ Control Coverage',
     detail: 'Orchestrated purple team simulations to validate MITRE ATT&CK defenses and harden response workflows.',
-  },
-];
-
-export const focusAreas: FocusArea[] = [
-  {
-    title: 'Detection Engineering Leadership',
-    description:
-      'Productizing threat research into resilient analytics portfolios that defenders can trust.',
-    bullets: [
-      'Operational owner for detection-as-code and CI/CD governance.',
-      'Backlog prioritization driven by threat intel, emulation, and SOC feedback loops.',
-      'Mentor analysts on translating adversary tradecraft into measurable controls.',
-    ],
-    icon: Command,
-    accent: 'from-cyan-500/60 to-blue-500/40',
-  },
-  {
-    title: 'Cloud Security Architecture',
-    description:
-      'Designing secure guardrails for AWS, Azure, and hybrid SaaS footprints without slowing delivery.',
-    bullets: [
-      'Codify IAM, network, and data protection baselines as reusable templates.',
-      'Instrument compliance automation and drift detection across multi-account estates.',
-      'Embed incident response runbooks with native cloud detections and SOAR integrations.',
-    ],
-    icon: CloudCog,
-    accent: 'from-emerald-500/60 to-teal-500/40',
-  },
-  {
-    title: 'Threat Operations & Response',
-    description:
-      'Owning the full loop from hunt hypotheses to executive reporting and remediation orchestration.',
-    bullets: [
-      'Drive purple team programs validating MITRE ATT&CK coverage and response readiness.',
-      'Author executive-ready intelligence briefs and metrics that influence board conversations.',
-      'Automate collection, enrichment, and handoffs to shrink mean time to contain incidents.',
-    ],
-    icon: Target,
-    accent: 'from-purple-500/60 to-fuchsia-500/40',
   },
 ];
 
