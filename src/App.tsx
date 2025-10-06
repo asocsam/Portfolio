@@ -302,6 +302,7 @@ export default function App() {
             <a href="mailto:24s.chouhan@gmail.com" className="transition hover:text-cyan-200">Email</a>
           </div>
         </div>
-    </footer>
-  );
-}
+         </footer>
+    </div>
+    );
+  }
