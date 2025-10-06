@@ -81,6 +81,9 @@ function App() {
                   </span>
                 ))}
               </div>
+              <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-200">
+                CEH • Security+ • AWS Solutions Architect (In Progress)
+              </p>
               <div className="grid gap-4 md:grid-cols-3">
                 {highlightStats.map((stat) => (
                   <div
@@ -178,6 +181,27 @@ function App() {
           <div className="grid gap-8 lg:grid-cols-2">
             {projects.map((project) => (
               <ProjectCard key={project.title} project={project} />
+
+        <Section title="Signature Projects" icon={Terminal} eyebrow="GitHub Spotlights">
+          <div className="grid gap-8 lg:grid-cols-2">
+            {projects.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Experience Blueprint" icon={Brain} eyebrow="How I build security" background="from-blue-500/10 via-slate-900 to-slate-950">
+          <div className="grid gap-6 md:grid-cols-2">
+            {experience.map((item) => (
+              <ExperienceCard key={item.title} item={item} />
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Technical Arsenal" icon={Zap} eyebrow="Depth & breadth" background="from-slate-900 via-slate-950 to-slate-950">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {skills.map((cluster) => (
+              <SkillCard key={cluster.title} cluster={cluster} />
             ))}
           </div>
         </Section>
@@ -234,9 +258,45 @@ function App() {
               Email
             </a>
           </div>
+        <Section title="Let&apos;s Build Resilient Security" icon={Rocket} eyebrow="Reach out" center>
+          <div className="mx-auto max-w-3xl text-center text-lg text-slate-300">
+            I love collaborating on cloud security, detection engineering, and offensive research projects. Whether you
+            need someone to harden AWS environments, craft SIEM content, or run adversary simulations, let&apos;s make it happen.
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            {socials.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target={social.label === 'Email' ? '_self' : '_blank'}
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/10 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-cyan-100 transition hover:bg-cyan-400/20"
+              >
+                <social.icon className="h-4 w-4" />
+                {social.label}
+              </a>
+            ))}
+          </div>
+        </Section>
+      </main>
+
+      <footer className="border-t border-white/5 bg-slate-950/80 py-10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+          <p>© {new Date().getFullYear()} Samman Chouhan. Purpose-built for security leaders & recruiters.</p>
+          <div className="flex gap-4 text-slate-400">
+            <a href="https://github.com/asocsam" className="transition hover:text-cyan-200">
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/samman-chouhan" className="transition hover:text-cyan-200">
+              LinkedIn
+            </a>
+            <a href="mailto:24s.chouhan@gmail.com" className="transition hover:text-cyan-200">
+              Email
+            </a>
+          </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </motion.article>
   );
 }
 
@@ -283,6 +343,73 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
       </div>
+    </motion.article>
+  );
+}
+
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <motion.article
+      {...fadeIn}
+      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur transition hover:border-cyan-400/40 hover:bg-cyan-500/10"
+    >
+      <div className="absolute inset-x-0 -top-24 h-48 bg-gradient-to-b from-cyan-500/20 to-transparent opacity-0 transition group-hover:opacity-100" />
+      <div className="relative flex flex-col gap-4">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-cyan-200">{project.subtitle}</p>
+            <h3 className="mt-2 text-2xl font-semibold text-white">{project.title}</h3>
+          </div>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200 transition hover:border-cyan-400/40 hover:text-cyan-100"
+          >
+            View Repo
+            <Github className="h-3.5 w-3.5" />
+          </a>
+        </div>
+        <p className="text-sm leading-relaxed text-slate-300">{project.summary}</p>
+        <ul className="space-y-2 text-sm text-slate-300">
+          {project.highlights.map((highlight) => (
+            <li key={highlight} className="flex items-start gap-2">
+              <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-300" />
+              <span>{highlight}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="flex flex-wrap gap-2">
+          {project.tools.map((tool) => (
+            <span
+              key={tool}
+              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-wide text-cyan-200"
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
+      </div>
+function ExperienceCard({ item }: { item: ExperienceItem }) {
+  return (
+    <motion.article
+      {...fadeIn}
+      className="flex h-full flex-col gap-4 rounded-3xl border border-white/10 bg-gradient-to-br from-blue-500/5 via-slate-950 to-slate-950 p-6 backdrop-blur"
+    >
+      <div className="space-y-1">
+        <p className="text-xs uppercase tracking-[0.3em] text-blue-200">{item.timeframe}</p>
+        <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+        <p className="text-sm font-medium text-slate-300">{item.organization}</p>
+      </div>
+      <p className="text-sm text-slate-300">{item.description}</p>
+      <ul className="space-y-2 text-sm text-slate-300">
+        {item.bullets.map((bullet) => (
+          <li key={bullet} className="flex items-start gap-2">
+            <Sparkles className="mt-0.5 h-4 w-4 text-blue-200" />
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
     </motion.article>
   );
 }
@@ -361,6 +488,33 @@ function AchievementCard({ achievement }: { achievement: Achievement }) {
     </div>
   );
 }
+
+function ImpactCard({ metric }: { metric: ImpactMetric }) {
+  return (
+    <motion.div
+      {...fadeIn}
+      className="flex items-start gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur"
+    >
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-slate-900/70 text-cyan-200">
+        <Activity className="h-5 w-5" />
+      </div>
+      <div>
+        <p className="text-lg font-semibold text-white">{metric.stat}</p>
+        <p className="text-sm text-slate-300">{metric.detail}</p>
+      </div>
+    </motion.div>
+  );
+}
+
+interface SectionProps {
+  title: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  eyebrow: string;
+  background?: string;
+  center?: boolean;
+  children: React.ReactNode;
+}
+
 
 function ImpactCard({ metric }: { metric: ImpactMetric }) {
   return (
