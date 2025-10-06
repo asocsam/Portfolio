@@ -62,6 +62,13 @@ export interface ImpactMetric {
   detail: string;
 }
 
+export const credentialBadges = [
+  'CEH',
+  'CompTIA Security+',
+  'AWS Solutions Architect – Associate (In Progress)',
+  'Splunk Core Certified Power User',
+];
+
 export const socials: SocialLink[] = [
   {
     label: 'Email',
