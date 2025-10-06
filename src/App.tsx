@@ -227,8 +227,8 @@ function App() {
             </a>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </motion.article>
   );
 }
 
