@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Shield, Code, Award, Mail, Github, Linkedin, Terminal, Lock,
-  Target, Sparkles, Brain, Zap, Activity, CheckCircle2, Server
+  Target, Sparkles, Brain, Zap, Activity, CheckCircle2, Server, Rocket
 } from 'lucide-react';
 
 import profileImg from './samman.png';
