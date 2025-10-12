@@ -159,54 +159,58 @@ export const projects: Project[] = [
 
 export const experience: ExperienceItem[] = [
   {
-    title: 'Senior Security Engineer',
-    organization: 'Synapse LLC',
-    timeframe: 'Jan 2024 – Present',
+    title: 'Network & Security Engineer',
+    organization: 'Focus Eye Technocraft · Indore, India',
+    timeframe: 'Aug 2022 – Dec 2023',
     description:
-      'Leading detection engineering, purple team automation, and telemetry strategy for a fintech security program.',
+      'Architected secure AWS and hybrid infrastructures while automating detection, patching, and access controls for distributed clients.',
     bullets: [
-      'Built a real-time pipeline aggregating 50TB+ telemetry across Splunk, Elastic, and Snowflake, lifting detection accuracy by 40%.',
-      'Deployed detection-as-code workflows in GitLab CI/CD with 120+ Sigma rules, trimming analytics release cycles by 55%.',
-      'Ran AttackIQ and Atomic Red Team simulations that increased control coverage by 35% and tuned response playbooks.',
+      'Strengthened AWS GuardDuty & Security Hub pipelines, cutting false positives by 40% and elevating detection fidelity.',
+      'Automated vulnerability scanning and patching with AWS Systems Manager + Lambda, shrinking remediation time by 70%.',
+      'Deployed IAM segmentation and VPN zero-trust access for 50+ accounts, eliminating credential sprawl and lateral exposure.',
+      'Executed Nmap/Nessus-driven threat scans uncovering 30+ high-risk flaws, reducing total attack surface by 35%.',
+      'Unified CloudTrail, GuardDuty, and VPC Flow telemetry in Splunk dashboards, slashing investigation time by 20%.',
     ],
   },
   {
-    title: 'Security Operations Engineer',
-    organization: 'CloudOne Managed Security',
-    timeframe: 'Aug 2022 – Jan 2024',
+    title: 'Cybersecurity Analyst Intern',
+    organization: 'Avalanche Infotech Pvt · Indore, India',
+    timeframe: 'Jan 2022 – Jul 2022',
     description:
-      'Owned SIEM engineering, threat hunting, and client reporting for SaaS and cloud-native environments.',
+      'Delivered end-to-end SOC automation and visibility for AWS workloads using Splunk, SOAR, and EDR integrations.',
     bullets: [
-      'Maintained Splunk pipelines serving 25 SaaS clients and 35TB/day ingest with 99% MITRE ATT&CK coverage.',
-      'Authored 85 detections and 18 SOAR playbooks, cutting response times by 30% and false positives by 70%.',
-      'Delivered executive-ready threat hunting briefings and exposure reviews that drove board-level risk reductions.',
+      'Built Splunk ES dashboards for CloudTrail, VPC Flow, and GuardDuty, accelerating detection by 35%.',
+      'Automated incident response via Splunk SOAR + Lambda, reducing remediation effort by 80%.',
+      'Deployed Security Hub & Inspector across EC2/S3, achieving CIS compliance and 50% fewer misconfigs.',
+      'Integrated SentinelOne EDR with CloudWatch + Splunk, improving investigation throughput by 40%.',
     ],
   },
   {
-    title: 'Security Operations Center Analyst',
-    organization: 'Tech Guard Team',
-    timeframe: 'May 2021 – Aug 2022',
+    title: 'Bug Bounty Hunter',
+    organization: 'HackerOne & Bugcrowd (Independent)',
+    timeframe: '2021 – Present',
     description:
-      'Triaged incidents, tuned SIEM analytics, and coordinated remediation for enterprise and public sector customers.',
+      'Disclosed exploitable web and cloud vulnerabilities for global programs with reproducible PoCs and technical write-ups.',
     bullets: [
-      'Investigated 2.5K+ incidents annually across Splunk, Sentinel, and QRadar with a 98% SLA adherence rate.',
-      'Implemented hunt playbooks that surfaced credential abuse, ransomware precursors, and BEC tradecraft.',
-      'Partnered with IR teams to streamline evidence capture and automation, shrinking containment time by 25%.',
+      'Identified and responsibly disclosed XSS, SSRF, and IDOR flaws with full impact assessments and mitigation guidance.',
+      'Automated reconnaissance using Nuclei, Subfinder, and custom Python scripts, raising valid-finding rate by 25%.',
+      'Mapped findings to CWE and MITRE ATT&CK, enhancing consistency and triage clarity for vendor programs.',
     ],
   },
   {
-    title: 'Cybersecurity Analyst Co-op',
-    organization: 'SecureFuture Labs',
-    timeframe: 'Jan 2021 – May 2021',
+    title: 'Independent Security Researcher',
+    organization: 'Personal Red & Blue Team Labs',
+    timeframe: '2020 – Present',
     description:
-      'Supported governance, risk, and cloud security assessments for manufacturing and healthcare clients.',
+      'Developing detection engineering pipelines, adversary emulation environments, and SIEM analytics for purple-team research.',
     bullets: [
-      'Documented NIST CSF maturity gaps and remediation roadmaps adopted by CISO leadership.',
-      'Automated evidence collection scripts in Python that reduced audit preparation effort by 20 hours per engagement.',
-      'Collaborated on AWS security baselines leveraging Config, GuardDuty, and IAM least-privilege patterns.',
+      'Built AWS-hosted Caldera & Atomic Red Team lab integrated with Wazuh + Splunk for end-to-end telemetry testing.',
+      'Authored Sigma rules mapped to ATT&CK tactics for Sysmon and Winlogbeat events, validating detections across multiple datasets.',
+      'Automated enrichment and alert correlation workflows, enabling near-real-time incident triage and response simulation.',
     ],
   },
 ];
+
 
 export const skills: SkillCluster[] = [
   {
