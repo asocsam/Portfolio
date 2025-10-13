@@ -26,6 +26,7 @@ import {
   type Achievement,
 } from './content';
 
+// Reusable fade animation
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
@@ -33,8 +34,7 @@ const fadeIn = {
   transition: { duration: 0.6, ease: 'easeOut' },
 };
 
-/* ---------- Small stateless UI blocks ---------- */
-
+// Small UI Components
 const SkillPill = ({ text }: { text: string }) => (
   <span className="rounded-full border border-white/10 bg-slate-900/80 px-3 py-1 text-xs font-medium uppercase tracking-wide text-slate-200">
     {text}
@@ -143,20 +143,26 @@ const SkillClusterCard = ({ cluster }: { cluster: SkillCluster }) => (
   </motion.div>
 );
 
+// Generic section wrapper
 function Section({
-  title, icon: Icon, eyebrow, background, center, children,
+  title, icon: Icon, eyebrow, background, center, delay = 0, children,
 }: {
   title: string;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   eyebrow: string;
   background?: string;
   center?: boolean;
+  delay?: number;
   children: React.ReactNode;
 }) {
   return (
     <section className={`relative ${background ? `bg-gradient-to-br ${background}` : ''}`}>
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <motion.div {...fadeIn} className={`mb-10 flex flex-col gap-3 ${center ? 'items-center text-center' : ''}`}>
+        <motion.div
+          {...fadeIn}
+          transition={{ ...fadeIn.transition, delay }}
+          className={`mb-10 flex flex-col gap-3 ${center ? 'items-center text-center' : ''}`}
+        >
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.3em] text-slate-300">
             <Icon className="h-3.5 w-3.5" />
             {eyebrow}
@@ -169,13 +175,11 @@ function Section({
   );
 }
 
-/* ---------- App ---------- */
-
+// ---------------- APP ----------------
 export default function App() {
-  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
+      {/* Hero Section */}
       <div className="relative overflow-hidden">
         <img
           src={heroTexture}
@@ -185,12 +189,10 @@ export default function App() {
         <header className="relative z-10">
           <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-24 lg:flex-row lg:items-center">
             <motion.div className="flex-1 space-y-8" {...fadeIn}>
-              <h1 className="text-5xl font-bold" data-text="Samman Chouhan">Samman Chouhan</h1>
+              <h1 className="text-5xl font-bold">Samman Chouhan</h1>
               <p className="text-lg text-slate-300">
-                Seasoned security engineer delivering cloud-native defenses, detection pipelines, and purple team automation.
+                Security Engineer specializing in cloud-native defenses, detection pipelines, and purple team automation.
               </p>
-
-              {/* Badges */}
               <div className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-[0.3em] text-cyan-200">
                 {credentialBadges.map((b) => (
                   <span key={b} className="rounded-full border border-cyan-400/30 bg-cyan-500/5 px-4 py-1 text-[11px] tracking-[0.2em] text-cyan-100">
@@ -198,8 +200,6 @@ export default function App() {
                   </span>
                 ))}
               </div>
-
-              {/* Contact */}
               <div className="flex flex-wrap items-center gap-4">
                 <a
                   href="mailto:24s.chouhan@gmail.com"
@@ -233,50 +233,51 @@ export default function App() {
         </header>
       </div>
 
-      {/* Credentials & Impact */}
+      {/* MAIN CONTENT */}
       <main className="relative z-10 space-y-24 pb-24">
-        <Section title="Credentials & Impact" icon={Shield} eyebrow="Proof at a glance">
+        {/* 1) Experience */}
+        <Section title="Experience Blueprint" icon={Brain} eyebrow="How I build security" background="from-blue-500/10 via-slate-900 to-slate-950" delay={0.00}>
+          <div className="grid gap-6 md:grid-cols-2">
+            {(experience ?? []).map((e) => <ExperienceCard key={e.title} item={e} />)}
+          </div>
+        </Section>
+
+        {/* 2) Projects */}
+        <Section title="Signature Projects & Research Labs" icon={Terminal} eyebrow="GitHub Spotlights" delay={0.05}>
+          <div className="grid gap-8 lg:grid-cols-2">
+            {(projects ?? []).map((p) => <ProjectCard key={p.title} project={p} />)}
+          </div>
+        </Section>
+
+        {/* 3) Skills */}
+        <Section title="Technical Arsenal" icon={Zap} eyebrow="Depth & breadth" background="from-slate-900 via-slate-950 to-slate-950" delay={0.10}>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {(skills ?? []).map((cl) => <SkillClusterCard key={cl.title} cluster={cl} />)}
+          </div>
+        </Section>
+
+        {/* 4) Credentials & Impact */}
+        <Section title="Credentials & Impact" icon={Shield} eyebrow="Proof at a glance" delay={0.15}>
           <div className="grid gap-6 lg:grid-cols-[1.2fr,0.8fr]">
             <div className="grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
               <h3 className="text-lg font-semibold text-cyan-200">Certifications</h3>
               <div className="grid gap-4 sm:grid-cols-2">
-                {certifications.map((c) => <CertificationCard key={c.name} cert={c} />)}
+                {(certifications ?? []).map((c) => <CertificationCard key={c.name} cert={c} />)}
               </div>
             </div>
             <div className="flex flex-col gap-4">
-              {impactMetrics.map((m) => <ImpactCard key={m.stat} metric={m} />)}
+              {(impactMetrics ?? []).map((m) => <ImpactCard key={m.stat} metric={m} />)}
             </div>
           </div>
         </Section>
 
-        {/* Skills */}
-        <Section title="Technical Arsenal" icon={Zap} eyebrow="Depth & breadth" background="from-slate-900 via-slate-950 to-slate-950">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {skills.map((cl) => <SkillClusterCard key={cl.title} cluster={cl} />)}
-          </div>
-        </Section>
-
-        {/* Projects */}
-        <Section title="Signature Projects" icon={Terminal} eyebrow="GitHub Spotlights">
-          <div className="grid gap-8 lg:grid-cols-2">
-            {projects.map((p) => <ProjectCard key={p.title} project={p} />)}
-          </div>
-        </Section>
-
-        {/* Experience */}
-        <Section title="Experience Blueprint" icon={Brain} eyebrow="How I build security" background="from-blue-500/10 via-slate-900 to-slate-950">
-          <div className="grid gap-6 md:grid-cols-2">
-            {experience.map((e) => <ExperienceCard key={e.title} item={e} />)}
-          </div>
-        </Section>
-
-        {/* Footer CTA */}
-        <Section title="Let&apos;s Build Resilient Security" icon={Rocket} eyebrow="Reach out" center>
+        {/* 5) CTA */}
+        <Section title="Let&apos;s Build Resilient Security" icon={Rocket} eyebrow="Reach out" center delay={0.20}>
           <div className="mx-auto max-w-3xl text-center text-lg text-slate-300">
             I love collaborating on cloud security, detection engineering, and offensive research projects.
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            {socials.map((s) => (
+            {(socials ?? []).map((s) => (
               <a
                 key={s.label}
                 href={s.href}
@@ -292,7 +293,7 @@ export default function App() {
         </Section>
       </main>
 
-      {/* Bottom footer */}
+      {/* Footer */}
       <footer className="border-t border-white/5 bg-slate-950/80 py-10">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Samman Chouhan.</p>
@@ -302,7 +303,7 @@ export default function App() {
             <a href="mailto:24s.chouhan@gmail.com" className="transition hover:text-cyan-200">Email</a>
           </div>
         </div>
-         </footer>
+      </footer>
     </div>
-    );
-  }
+  );
+}
