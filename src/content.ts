@@ -160,7 +160,7 @@ export const projects: Project[] = [
 export const experience: ExperienceItem[] = [
   {
     title: 'Network & Security Engineer',
-    organization: 'Focus Eye Technocraft · Indore, India',
+    organization: 'Compucom Pvt Ltd, Jaipur',
     timeframe: 'Aug 2022 – Dec 2023',
     description:
       'Architected secure AWS and hybrid infrastructures while automating detection, patching, and access controls for distributed clients.',
